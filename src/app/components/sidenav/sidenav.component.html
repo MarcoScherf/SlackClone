@@ -7,10 +7,10 @@
   </li>
 
   <ng-container>
-    <div class="w-100">
+    <div *ngFor="let channel of channels" class="w-100">
       <li>
         <div class="w-100 center-horizontal link">
-          <mat-icon>tag</mat-icon>Channelname
+          <mat-icon>tag</mat-icon>{{ channel.name }}
         </div>
         <button mat-icon-button [matMenuTriggerFor]="menu">
           <mat-icon>more_vert</mat-icon>

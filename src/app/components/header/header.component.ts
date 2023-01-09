@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { SidenavService } from 'src/app/services/sidenav.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { SidenavService } from 'src/app/services/sidenav.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Input() auth: boolean;
   constructor(private sidennavService: SidenavService) {}
 
   ngOnInit(): void {}

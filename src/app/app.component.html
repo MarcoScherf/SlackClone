@@ -1,6 +1,7 @@
-<app-header></app-header>
+<app-header [auth]="auth"></app-header>
 <mat-drawer-container>
   <mat-drawer
+    *ngIf="auth"
     #drawer
     class="mat-sidenav"
     [mode]="mobileQuery.matches ? 'over' : 'side'"

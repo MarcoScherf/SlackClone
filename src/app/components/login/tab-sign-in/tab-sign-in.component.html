@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm">
+  <mat-form-field>
+    <mat-label>E-mail:</mat-label>
+    <input
+      matInput
+      type="email"
+      formControlName="email"
+      pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+      required
+    />
+    <mat-icon matSuffix>mail</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password:</mat-label>
+    <input matInput type="password" formControlName="password" required />
+    <mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field>
+  <div class="resetPw">
+    <a>Forgot password ?</a>
+  </div>
+
+  <mat-card-footer>
+    <button mat-raised-button color="primary" type="submit" style="width: 100%">
+      Sign In
+    </button>
+    <button mat-raised-button color="accent" type="button" style="width: 100%">
+      Try as Guest
+    </button>
+  </mat-card-footer>
+</form>

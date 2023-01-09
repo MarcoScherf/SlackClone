@@ -1,0 +1,13 @@
+form {
+  display: flex;
+  flex-direction: column;
+  height: 238.625px;
+  mat-card-footer {
+    display: flex;
+    flex-direction: column;
+    button {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+  }
+}

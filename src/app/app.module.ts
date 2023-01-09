@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { HeaderComponent } from './components/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -23,13 +24,27 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { RoomComponent } from './components/room/room.component';
+import { LoginComponent } from './components/login/login.component';
+import { TabSignInComponent } from './components/login/tab-sign-in/tab-sign-in.component';
+import { TabSignUpComponent } from './components/login/tab-sign-up/tab-sign-up.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidenavComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidenavComponent,
+    RoomComponent,
+    LoginComponent,
+    TabSignInComponent,
+    TabSignUpComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,

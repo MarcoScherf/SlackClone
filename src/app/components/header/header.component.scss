@@ -1,0 +1,14 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  .left-side {
+    display: flex;
+    align-items: center;
+    .close-btn {
+      cursor: pointer;
+    }
+    mat-icon {
+      padding: 10px;
+    }
+  }
+}

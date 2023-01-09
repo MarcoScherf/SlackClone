@@ -17,11 +17,10 @@ export class AppComponent {
   routerSubscription!: Subscription;
   authStateSubscription!: Subscription;
   userSubscription!: Subscription;
+  auth: boolean = false;
 
   @ViewChild('drawer') public sidenav: MatDrawer;
   private _mobileQueryListener: () => void;
-  authUser!: any;
-  user!: any;
 
   ngOnInit() {
     this.sideNavService.sideNavToggleSubject.subscribe(() => {

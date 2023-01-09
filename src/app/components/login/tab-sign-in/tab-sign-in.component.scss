@@ -1,0 +1,18 @@
+form {
+  display: flex;
+  flex-direction: column;
+  .resetPw {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 16px;
+    font-size: 11px;
+  }
+  mat-card-footer {
+    display: flex;
+    flex-direction: column;
+    button {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+  }
+}
