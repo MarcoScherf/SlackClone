@@ -25,7 +25,7 @@ export class TabSignUpComponent implements OnInit {
       .signUp(email, password)
       .then(() => {
         this.authService.updateUsers(name);
-        this.router.navigate(['channel']);
+        this.router.navigate(['room/9JAgfPq5MoK8eeras1YV']);
       })
       .catch((err) => console.log(err.message));
   }

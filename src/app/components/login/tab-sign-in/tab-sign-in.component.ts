@@ -13,28 +13,25 @@ export class TabSignInComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   });
-  @Output() Auth = new EventEmitter<string>();
 
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
   login() {
-    this.Auth.emit('test');
     const { email, password } = this.loginForm.value;
     this.auth
       .signIn(email, password)
       .then(() => {
-        this.router.navigate(['/channel']);
+        this.router.navigate(['/room/9JAgfPq5MoK8eeras1YV']);
       })
       .catch((err) => console.log(err.message));
   }
 
   anonymSignIn() {
-    this.Auth.emit('test');
     this.auth.anonymSignIn().then(() => {
       this.auth.anonymUpdateDispalyName();
-      this.router.navigate(['channel']);
+      this.router.navigate(['room/9JAgfPq5MoK8eeras1YV']);
     });
   }
 }

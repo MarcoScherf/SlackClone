@@ -6,7 +6,7 @@
     </div>
     <div class="right-side" *ngIf="auth">
       <button mat-button [matMenuTriggerFor]="userMenu">
-        <div class="user">UserName</div>
+        <div class="user">{{ this.Auth.currentUser.displayName }}</div>
 
         <!-- <mat-icon>expand_more</mat-icon> -->
       </button>

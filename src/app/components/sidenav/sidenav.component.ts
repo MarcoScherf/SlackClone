@@ -1,5 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
@@ -11,10 +12,13 @@ export class SidenavComponent implements OnInit {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   channels: any;
+
+  showMenu: boolean;
   constructor(
     media: MediaMatcher,
     changeDetectorRef: ChangeDetectorRef,
-    private firestore: FirestoreService
+    private firestore: FirestoreService,
+    public auth: Auth
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 800px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

@@ -4,9 +4,14 @@ import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { RoomComponent } from './components/room/room.component';
 import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/channel' },
+  { path: '', pathMatch: 'full', redirectTo: '/room' },
   {
-    path: 'channel',
+    path: 'room',
+    component: RoomComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login'])),
+  },
+  {
+    path: 'room/:id',
     component: RoomComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login'])),
   },
