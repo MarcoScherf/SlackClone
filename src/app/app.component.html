@@ -1,7 +1,7 @@
-<app-header [auth]="auth"></app-header>
+<app-header [auth]="this.authService.isLoggedIn"></app-header>
 <mat-drawer-container>
   <mat-drawer
-    *ngIf="auth"
+    *ngIf="this.authService.isLoggedIn"
     #drawer
     class="mat-sidenav"
     [mode]="mobileQuery.matches ? 'over' : 'side'"

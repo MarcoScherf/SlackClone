@@ -1,8 +1,10 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+
+import { ChangeDetectorRef, Component, Output, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService } from './services/auth.service';
 import { SidenavService } from './services/sidenav.service';
 
 @Component({
@@ -36,7 +38,7 @@ export class AppComponent {
   }
 
   constructor(
-    private router: Router,
+    public authService: AuthService,
     private sideNavService: SidenavService,
     changeDetectorRef: ChangeDetectorRef,
     // private dataService: DataService,
@@ -45,5 +47,9 @@ export class AppComponent {
     this.mobileQuery = media.matchMedia('(max-width: 815px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+  }
+
+  log(name: any) {
+    console.log(name);
   }
 }

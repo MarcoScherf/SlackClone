@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-tab-sign-up',
@@ -13,7 +15,18 @@ export class TabSignUpComponent implements OnInit {
     password: new FormControl('', Validators.required),
   });
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
+
+  signUp() {
+    const { name, email, password } = this.loginForm.value;
+    this.authService
+      .signUp(email, password)
+      .then(() => {
+        this.authService.updateUsers(name);
+        this.router.navigate(['channel']);
+      })
+      .catch((err) => console.log(err.message));
+  }
 }

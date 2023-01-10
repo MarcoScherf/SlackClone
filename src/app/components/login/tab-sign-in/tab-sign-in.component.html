@@ -15,15 +15,24 @@
     <input matInput type="password" formControlName="password" required />
     <mat-icon matSuffix>lock</mat-icon>
   </mat-form-field>
-  <div class="resetPw">
-    <a>Forgot password ?</a>
-  </div>
 
   <mat-card-footer>
-    <button mat-raised-button color="primary" type="submit" style="width: 100%">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      style="width: 100%"
+      (click)="login()"
+    >
       Sign In
     </button>
-    <button mat-raised-button color="accent" type="button" style="width: 100%">
+    <button
+      mat-raised-button
+      color="accent"
+      type="button"
+      style="width: 100%"
+      (click)="anonymSignIn()"
+    >
       Try as Guest
     </button>
   </mat-card-footer>
