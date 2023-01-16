@@ -7,20 +7,15 @@
     <div class="right-side" *ngIf="auth">
       <button mat-button [matMenuTriggerFor]="userMenu">
         <div class="user">{{ this.Auth.currentUser.displayName }}</div>
-
-        <!-- <mat-icon>expand_more</mat-icon> -->
       </button>
     </div>
 
-    <ng-template #loginButton>
-      <button mat-button routerLink="login">
-        Login
-        <mat-icon>login</mat-icon>
-      </button>
-    </ng-template>
-
     <mat-menu #userMenu="matMenu">
-      <button mat-menu-item routerLink="home">
+      <button
+        mat-menu-item
+        routerLink="home"
+        routerLink="/room/9JAgfPq5MoK8eeras1YV"
+      >
         <mat-icon>home</mat-icon>
         Home
       </button>
@@ -28,7 +23,7 @@
         <mat-icon>person</mat-icon>
         Profile
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="logout()">
         <mat-icon>logout</mat-icon>
         Logout
       </button>
