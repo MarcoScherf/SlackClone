@@ -34,4 +34,6 @@ export class SidenavComponent implements OnInit {
       this.channels = channels;
     });
   }
+
+  checkUser() {}
 }

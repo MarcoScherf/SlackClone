@@ -1,31 +1,31 @@
 <ul>
   <li class="sidenav">
-    <div class="channel-name">Channels</div>
+    <div class="categorie">Channels</div>
     <button mat-icon-button color="primary">
       <mat-icon>add_circle</mat-icon>
     </button>
   </li>
 
   <ng-container>
-    <div *ngFor="let channel of channels" class="w-100">
+    <mat-selection-list [multiple]="false">
+      <mat-list-option
+        *ngFor="let channel of channels"
+        [routerLink]="['/room/' + channel.id]"
+      >
+        <span class="channel-name">
+          <mat-icon>tag</mat-icon>{{ channel.name }}</span
+        >
+      </mat-list-option>
+    </mat-selection-list>
+    <!-- <div *ngFor="let channel of channels" class="w-100">
       <li>
-        <div class="w-100 center-horizontal link">
+        <div
+          class="w-100 center-horizontal link"
+          [routerLink]="['/room/' + channel.id]"
+        >
           <mat-icon>tag</mat-icon>{{ channel.name }}
         </div>
-        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="showMenu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>edit</mat-icon>
-            Edit
-          </button>
-          <button mat-menu-item class="warn">
-            <mat-icon color="warn">delete</mat-icon>
-            <span>Delete</span>
-          </button>
-        </mat-menu>
       </li>
-    </div>
+    </div> -->
   </ng-container>
 </ul>
