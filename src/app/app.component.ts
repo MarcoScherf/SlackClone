@@ -1,8 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-
-import { ChangeDetectorRef, Component, Output, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from './services/auth.service';
 import { SidenavService } from './services/sidenav.service';
@@ -19,7 +17,6 @@ export class AppComponent {
   routerSubscription!: Subscription;
   authStateSubscription!: Subscription;
   userSubscription!: Subscription;
-  auth: boolean = false;
 
   @ViewChild('drawer') public sidenav: MatDrawer;
   private _mobileQueryListener: () => void;

@@ -1,1 +1,23 @@
-<p>dialog-add-channel works!</p>
+<div class="wrapper">
+  <h2>Add new Channel</h2>
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>Channel Name</mat-label>
+      <input matInput [(ngModel)]="channel.name" name="name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="channel.description"
+        name="description"
+      ></textarea>
+    </mat-form-field>
+  </form>
+  <div class="btn">
+    <button mat-raised-button (click)="this.dialogRef.close()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="saveChannel()">
+      Save
+    </button>
+  </div>
+</div>

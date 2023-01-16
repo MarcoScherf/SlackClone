@@ -48,8 +48,8 @@ export class RoomComponent implements OnInit {
   }
 
   saveNewMessage() {
-    (this.message.time = Date.now()),
-      (this.message.user = this.auth.currentUser.displayName);
+    this.message.time = Date.now();
+    this.message.user = this.auth.currentUser.displayName;
     this.firestoreService.create(this.roomId, this.message.toJSON());
   }
 
